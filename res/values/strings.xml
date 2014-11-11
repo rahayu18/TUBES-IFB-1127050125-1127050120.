@@ -9,8 +9,8 @@
     <string name="mulai">Mulai</string>
     <string name="pilihan">Pilihan</string>
     <string name="saldo">Saldo</string>
-    <string name="pemasukan">Pemasukan</string>
-    <string name="pengeluaran">Pengeluaran</string>
+    <string name="pemasukan">Total Pemasukan</string>
+    <string name="pengeluaran">Total Pengeluaran</string>
     <string name="hari">Hari</string>
     <string name="tambah_pemasukan">Tambah Pemasukan</string>
     <string name="tambah_pengeluaran">Tambah Pengeluaran</string>

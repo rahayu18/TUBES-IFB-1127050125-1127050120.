@@ -22,16 +22,21 @@ public class LapPengeluaran extends Activity implements OnClickListener {
 	private TextView lapLabel;
 	private TextView lapNominal;
 	private TextView lapDeskripsi;
+	private TextView textPengeluaran;
 	private ImageView logo;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.lap_pemasukan);
+		setContentView(R.layout.lap_pengeluaran);
 
 		ActionBar actionBar = getActionBar();
 		actionBar.setTitle("Laporan Pengeluaran");
 		actionBar.setDisplayHomeAsUpEnabled(false);
+		
+		//textview pemasukan
+		textPengeluaran = (TextView)findViewById(R.id.textPengeluaran);
+		initStartView();
 
 		parent = (ViewGroup) findViewById(R.id.linearParentIn);
 
@@ -43,21 +48,23 @@ public class LapPengeluaran extends Activity implements OnClickListener {
 			Cursor c = dba.getAllPengeluaran();
 			if (c.moveToFirst()) {
 				do {
-					view = LayoutInflater.from(getBaseContext()).inflate(R.layout.row, null);
-					lapTanggal = (TextView) view.findViewById(R.id.textLapTanggal);
-					lapLabel = (TextView) view.findViewById(R.id.textLapJenis);
-					lapNominal = (TextView) view.findViewById(R.id.textLapHarga);
-					lapDeskripsi = (TextView) view.findViewById(R.id.textLapKeterangan);
-					logo = (ImageView)view.findViewById(R.id.img_logo);
-				    Resources res = getResources(); /** from an Activity */
-					logo.setImageDrawable(res.getDrawable(R.drawable.ic_pengeluaran));
-					
-					lapTanggal.setText("" + c.getString(1));
-					lapLabel.setText("" + c.getString(2));
-					lapNominal.setText("Rp. "+ String.format("%,d", c.getInt(3)).replace(",","."));
-					lapDeskripsi.setText("" + c.getString(4));
+					if(c.getInt(3) != 0){
+						view = LayoutInflater.from(getBaseContext()).inflate(R.layout.row, null);
+						lapTanggal = (TextView) view.findViewById(R.id.textLapTanggal);
+						lapLabel = (TextView) view.findViewById(R.id.textLapJenis);
+						lapNominal = (TextView) view.findViewById(R.id.textLapHarga);
+						lapDeskripsi = (TextView) view.findViewById(R.id.textLapKeterangan);
+						logo = (ImageView)view.findViewById(R.id.img_logo);
+					    Resources res = getResources(); /** from an Activity */
+						logo.setImageDrawable(res.getDrawable(R.drawable.ic_pengeluaran));
+						
+						lapTanggal.setText("" + c.getString(1));
+						lapLabel.setText("" + c.getString(2));
+						lapNominal.setText("Rp. "+ String.format("%,d", c.getInt(3)).replace(",","."));
+						lapDeskripsi.setText("" + c.getString(4));
 
-					parent.addView(view);
+						parent.addView(view);
+					}					
 				} while (c.moveToNext());
 			}
 		} catch (Exception e) {
@@ -73,6 +80,16 @@ public class LapPengeluaran extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		startActivity(new Intent(this, Mulai.class));
+	}
+	
+	public void initStartView(){
+		DateTime date = new DateTime();
+		DatabaseAdapter dba = new DatabaseAdapter(this);
+		dba.open();
+		
+		//set text pemasukan
+		textPengeluaran.setText("Rp. "+String.format("%,d",dba.getTotalPengeluaran()).replace(",","."));
+		
 	}
 
 }

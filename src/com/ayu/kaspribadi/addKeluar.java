@@ -20,12 +20,10 @@ import android.widget.Toast;
 
 public class addKeluar extends Activity implements OnItemSelectedListener,
 		OnClickListener {
-	Button btnTambahOut;
-	EditText textNominal;
-	EditText textTanggal;
-	EditText textLabel;
-	EditText textDeskripsi;
-	SQLiteDatabase db;
+	private Button btnTambahOut;
+	private EditText textNominal;
+	private EditText textLabel;
+	private EditText textDeskripsi;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
