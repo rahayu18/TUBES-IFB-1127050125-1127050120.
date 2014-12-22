@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_founder_name">Rahayu Satriani Lestari</string>
+    <string name="app_founder_nim">1127050125</string>
+    <string name="app_name">Kas Pribadi</string>
+    <string name="app_version">Kas Pribadi v1.0</string>
+    <string name="action_settings">Settings</string>
+    <string name="mulai">Mulai</string>
+    <string name="pilihan">Pilihan</string>
+    <string name="saldo">Saldo</string>
+    <string name="pemasukan">Pemasukan</string>
+    <string name="pengeluaran">Pengeluaran</string>
+    <string name="hari">Hari</string>
+    <string name="tambah_pemasukan">Tambah Pemasukan</string>
+    <string name="tambah_pengeluaran">Tambah Pengeluaran</string>
+    <string name="laporan_pemasukan">Laporan Pemasukan</string>
+    <string name="laporan_pengeluaran">Laporan Pengeluaran</string>
+    <string name="hapus_data">Hapus Data</string>
+    <string name="tentang">Tentang</string>
+    <string name="nominal">Nominal</string>
+    <string name="label">Label</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="tambah">Tambah</string>
+    <string name="img_logo">Logo Kas Pribadi</string>
+
+</resources>
