@@ -18,8 +18,6 @@ public class Mulai extends Activity implements OnClickListener {
 	private Button btnLapKeluar;
 	private TextView textHari;
 	private TextView textSisaUang;
-	private TextView textPengeluaran;
-	private TextView textPemasukan; 
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,11 +38,6 @@ public class Mulai extends Activity implements OnClickListener {
 		
 		textHari = (TextView)findViewById(R.id.textHari);
 		textSisaUang = (TextView)findViewById(R.id.textSisaUang);
-		
-		
-		//textview pengeluaran & pemasukan
-		textPengeluaran = (TextView)findViewById(R.id.textPengeluaran);
-		textPemasukan = (TextView)findViewById(R.id.textPemasukan);
 		
 		initStartView();
 	}
@@ -67,11 +60,6 @@ public class Mulai extends Activity implements OnClickListener {
 		textHari.setText(date.getHari());
 		
 		textSisaUang.setText("Rp. "+String.format("%,d", c.getInt(0)).replace(",", "."));
-		//set text pengeluaran
-		textPengeluaran.setText("Rp. "+String.format("%,d", dba.getTotalPengeluaran()).replace(",", "."));
-		
-		//set text pemasukan
-		textPemasukan.setText("Rp. "+String.format("%,d",dba.getTotalPemasukan()).replace(",","."));
 		
 	}
 	

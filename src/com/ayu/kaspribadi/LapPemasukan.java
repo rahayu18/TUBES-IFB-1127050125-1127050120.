@@ -21,16 +21,21 @@ public class LapPemasukan extends Activity{
 	private TextView lapLabel;
 	private TextView lapNominal;
 	private TextView lapDeskripsi;
+	private TextView textPemasukan; 
 	private ImageView logo;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lap_pemasukan);
+        setContentView(R.layout.laporan);
         
         ActionBar actionBar = getActionBar();
 		actionBar.setTitle("Laporan Pemasukan");
 		actionBar.setDisplayHomeAsUpEnabled(false);
+		
+		//textview pemasukan
+		textPemasukan = (TextView)findViewById(R.id.textPemasukan);
+		initStartView();
         
         parent = (ViewGroup)findViewById(R.id.linearParentIn);
         
@@ -68,4 +73,14 @@ public class LapPemasukan extends Activity{
         dba.close();
         
     }
+	
+	public void initStartView(){
+		DateTime date = new DateTime();
+		DatabaseAdapter dba = new DatabaseAdapter(this);
+		dba.open();
+		
+		//set text pemasukan
+		textPemasukan.setText("Rp. "+String.format("%,d",dba.getTotalPemasukan()).replace(",","."));
+		
+	}
 }
