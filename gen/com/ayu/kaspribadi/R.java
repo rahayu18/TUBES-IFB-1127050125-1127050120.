@@ -96,12 +96,12 @@ public final class R {
         public static final int img_logo=0x7f090012;
         public static final int linearLayout1=0x7f090000;
         public static final int linearParentIn=0x7f090001;
-        public static final int mulai=0x7f090002;
-        public static final int pemasukan=0x7f090006;
-        public static final int pengaturan=0x7f090003;
-        public static final int pengeluaran=0x7f090008;
+        public static final int mulai=0x7f090006;
+        public static final int pemasukan=0x7f090004;
+        public static final int pengaturan=0x7f090007;
+        public static final int pengeluaran=0x7f090002;
         public static final int radioGroup1=0x7f09001c;
-        public static final int saldo=0x7f090004;
+        public static final int saldo=0x7f090008;
         public static final int scrollView1=0x7f090019;
         public static final int tableLayout1=0x7f09001a;
         public static final int tableRow=0x7f09001b;
@@ -116,9 +116,9 @@ public final class R {
         public static final int textLapKeterangan=0x7f090016;
         public static final int textLapTanggal=0x7f090013;
         public static final int textNominal=0x7f09001f;
-        public static final int textPemasukan=0x7f090007;
-        public static final int textPengeluaran=0x7f090009;
-        public static final int textSisaUang=0x7f090005;
+        public static final int textPemasukan=0x7f090005;
+        public static final int textPengeluaran=0x7f090003;
+        public static final int textSisaUang=0x7f090009;
         public static final int textView2=0x7f090021;
         public static final int textView3=0x7f090024;
         public static final int txt_nom=0x7f09001e;
@@ -127,12 +127,13 @@ public final class R {
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int dummy=0x7f030001;
-        public static final int lap_pemasukan=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int mulai=0x7f030004;
-        public static final int option=0x7f030005;
-        public static final int row=0x7f030006;
-        public static final int tambah=0x7f030007;
+        public static final int lap_pengeluaran=0x7f030002;
+        public static final int laporan=0x7f030003;
+        public static final int main=0x7f030004;
+        public static final int mulai=0x7f030005;
+        public static final int option=0x7f030006;
+        public static final int row=0x7f030007;
+        public static final int tambah=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;
